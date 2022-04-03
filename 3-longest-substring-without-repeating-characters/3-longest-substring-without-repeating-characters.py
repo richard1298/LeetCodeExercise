@@ -1,5 +1,8 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
+#The technique here is to use a sliding window approach instead of a double loop. This reduces time complexity from O(n2) to O（n）
+#One way to improve is to use string/substring operators native to python instead of dictionary
+#And remember, the maximum length of substring only needs to be updated when no duplicates are found, and that needs to be done before the end index is updated
         dim = len(s)
         if dim <= 1:
             #print("This is a trivial input with length ", dim)
