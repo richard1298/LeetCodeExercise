@@ -1,5 +1,6 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
+        #The key to solve this problem is to use a single loop, and the way to search for palindrome string is to start from the centre and expand
         result = ''
         for i in range(len(s)):
             l = i-1
