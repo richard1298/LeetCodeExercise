@@ -5,8 +5,9 @@ class Solution:
             return s
         else:
             for i in list(range(numRows)):
-                temp = [s[t] for t in range(len(s)) if (t%(2*numRows-2) == i or t%(2*numRows-2) == (2*numRows-2-i)) ]
-                temp = ''.join(temp)
-                result += temp
-            return result
-        
+                for t in range(i,len(s),2*numRows - 2):
+                    result += s[t]
+                    if i >=1 and i <=numRows - 2 and t+2*numRows - 2 - 2*i <= len(s)-1:
+                        result += s[t+2*numRows - 2 - 2*i]
+        return result
+            
