@@ -1,5 +1,6 @@
 class Solution:
     def convert(self, s: str, numRows: int) -> str:
+#The key to solve this problem is simply through indexing; remember python can have a loop list with jumps!
         result = ''
         if numRows == 1:
             return s
