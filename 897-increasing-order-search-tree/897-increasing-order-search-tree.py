@@ -21,7 +21,6 @@ class Solution:
             new_node = TreeNode(val=self.ans[i])
             cur_node.right = new_node
             cur_node = new_node
-
         return head.right
                 
             
