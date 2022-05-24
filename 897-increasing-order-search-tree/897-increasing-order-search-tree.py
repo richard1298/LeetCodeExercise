@@ -15,10 +15,15 @@ class Solution:
                 self.ans.append(root.val)
                 orderflip(root.right)
         orderflip(root)
-        nodelist = [TreeNode(i,left=None,right=None) for i in self.ans]
-        for i in range(len(self.ans)-1):
-            nodelist[i].right = nodelist[i+1]
-        return nodelist[0]
+        head = TreeNode()
+        cur_node = head
+        for i in range(len(self.ans)):
+            new_node = TreeNode(val=self.ans[i])
+            cur_node.right = new_node
+            cur_node = new_node
+
+        return head.right
+                
             
             
                 
