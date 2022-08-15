@@ -12,7 +12,7 @@ where user1_id = 1 or user2_id = 1)
 select distinct(l.page_id) recommended_page
 from cte inner join Likes l
 on cte.user1_friendid = l.user_id
-    and l.page_id not in (select page_id from Likes where user_id = 1)
+where l.page_id not in (select page_id from Likes where user_id = 1)
 
 
 /*
